@@ -7,13 +7,17 @@ public class GameRunner {
     private static boolean notAWinner;
 
     public static void main(String[] args) {
+        new GameRunner().run();
+    }
+
+    public void run() {
         Game aGame = new Game();
 
         aGame.add("Chet");
         aGame.add("Pat");
         aGame.add("Sue");
 
-        Random rand = new Random(10);
+        Random rand = createRandom();
 
         do {
 
@@ -27,6 +31,9 @@ public class GameRunner {
 
 
         } while (notAWinner);
+    }
 
+    protected Random createRandom() {
+        return new Random();
     }
 }
