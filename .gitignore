@@ -1,0 +1,9 @@
+**/target/
+**/*.iml
+**/*.idea/
+./TriviaRefactoringKata/target/
+./TriviaRefactoringKata/*.iml
+./TriviaRefactoringKata/.idea/
+./FizzBuzzRefactoringKata/target/
+./FizzBuzzRefactoringKata/*.iml
+./FizzBuzzRefactoringKata/.idea/
