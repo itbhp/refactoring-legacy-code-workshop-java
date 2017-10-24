@@ -13,8 +13,7 @@ public class GameRunner {
         aGame.add("Pat");
         aGame.add("Sue");
 
-        Integer seed = Integer.valueOf(args[0]);
-        Random rand = new Random(seed);
+        Random rand = new Random(10);
 
         do {
 
