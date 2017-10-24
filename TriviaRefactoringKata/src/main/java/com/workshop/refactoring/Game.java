@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
+
+    private final Foo foo;
+
     ArrayList players = new ArrayList();
     int[] places = new int[6];
     int[] purses = new int[6];
@@ -18,6 +21,7 @@ public class Game {
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
+        foo = new Foo();
         for (int i = 0; i < 50; i++) {
             popQuestions.addLast("Pop Question " + i);
             scienceQuestions.addLast(("Science Question " + i));
