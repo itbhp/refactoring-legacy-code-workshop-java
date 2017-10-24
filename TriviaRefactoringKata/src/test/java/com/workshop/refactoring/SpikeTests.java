@@ -16,7 +16,7 @@ public class SpikeTests {
   public void name() throws Exception {
     Path path = Paths.get("game-output.txt");
     System.setOut(new PrintStream(path.toFile()));
-    new TestableGameRunner().run();
+    new TestableGameRunner(new Random(10)).run();
 
     String expected = String.valueOf(Files.readAllLines(Paths.get("expected-game-output.txt")));
     String actual = String.valueOf(Files.readAllLines(Paths.get("game-output.txt")));
@@ -26,9 +26,16 @@ public class SpikeTests {
 
 
   private class TestableGameRunner extends GameRunner{
-   @Override
+
+    private Random random;
+
+    public TestableGameRunner(Random random) {
+      this.random = random;
+    }
+
+    @Override
    protected Random createRandom() {
-     return new Random(10);
+     return random;
    }
   }
 }
