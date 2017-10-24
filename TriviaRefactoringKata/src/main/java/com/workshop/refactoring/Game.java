@@ -1,11 +1,10 @@
 package com.workshop.refactoring;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class Game {
 
-    private final Foo foo;
+    private final QuestionDeck questionDeck;
 
     ArrayList players = new ArrayList();
     int[] places = new int[6];
@@ -16,8 +15,8 @@ public class Game {
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
-        foo = new Foo();
-        foo.fillQuestion();
+        questionDeck = new QuestionDeck();
+        questionDeck.fillQuestions();
     }
 
     public boolean isPlayable() {
@@ -78,12 +77,12 @@ public class Game {
     }
 
     private void askQuestion() {
-        foo.askQuestionForCategory(currentCategory());
+        questionDeck.askQuestionForCategory(currentCategory());
     }
 
 
     private String currentCategory() {
-        return foo.currentCategoryForPlaces(places[currentPlayer]);
+        return questionDeck.currentCategoryForPlaces(places[currentPlayer]);
     }
 
     public boolean wasCorrectlyAnswered() {

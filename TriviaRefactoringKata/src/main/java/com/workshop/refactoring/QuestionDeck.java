@@ -2,20 +2,20 @@ package com.workshop.refactoring;
 
 import java.util.LinkedList;
 
-public class Foo {
+public class QuestionDeck {
   private LinkedList popQuestions;
   private LinkedList scienceQuestions;
   private LinkedList sportsQuestions;
   private LinkedList rockQuestions;
 
-  public Foo() {
+  public QuestionDeck() {
     popQuestions = new LinkedList();
     scienceQuestions = new LinkedList();
     sportsQuestions = new LinkedList();
     rockQuestions = new LinkedList();
   }
 
-  void fillQuestion() {
+  void fillQuestions() {
       for (int i = 0; i < 50; i++) {
           popQuestions.addLast("Pop Question " + i);
           scienceQuestions.addLast(("Science Question " + i));
