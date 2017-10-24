@@ -21,7 +21,7 @@ public class SpikeTests {
     String expected = String.valueOf(Files.readAllLines(Paths.get("expected-game-output.txt")));
     String actual = String.valueOf(Files.readAllLines(Paths.get("game-output.txt")));
 
-    assertThat(expected, is(actual));
+    assertThat(actual, is(expected));
   }
 
 
