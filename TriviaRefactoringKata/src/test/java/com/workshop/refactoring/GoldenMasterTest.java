@@ -18,14 +18,14 @@ public class GoldenMasterTest {
   public void name() throws Exception {
     runMultipleTimes(1000);
 
-    assertThat(readOutput(), is(readExpectedOutput()));
+    assertThat(output(), is(expectedOutput()));
   }
 
-  private String readOutput() throws IOException {
+  private String output() throws IOException {
     return readContent("game-output.txt");
   }
 
-  private String readExpectedOutput() throws IOException {
+  private String expectedOutput() throws IOException {
     return readContent("expected-game-output.txt");
   }
 
