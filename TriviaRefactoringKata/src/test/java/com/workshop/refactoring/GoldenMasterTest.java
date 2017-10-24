@@ -15,10 +15,18 @@ import static org.junit.Assert.assertThat;
 
 public class GoldenMasterTest {
   @Test
-  public void name() throws Exception {
+  public void gameExecutions() throws Exception {
     runMultipleTimes(1000);
-
     assertThat(output(), is(expectedOutput()));
+  }
+
+  private void runMultipleTimes(int times) throws FileNotFoundException {
+    Path path = Paths.get("game-output.txt");
+    System.setOut(new PrintStream(path.toFile()));
+
+    for(int i = 1; i < times; i++) {
+      GameRunner.run(new Random(i));
+    }
   }
 
   private String output() throws IOException {
@@ -31,14 +39,5 @@ public class GoldenMasterTest {
 
   private String readContent(String fileName) throws IOException {
     return String.valueOf(Files.readAllLines(Paths.get(fileName)));
-  }
-
-  private void runMultipleTimes(int times) throws FileNotFoundException {
-    Path path = Paths.get("game-output.txt");
-    System.setOut(new PrintStream(path.toFile()));
-
-    for(int i = 1; i < times; i++) {
-      GameRunner.run(new Random(i));
-    }
   }
 }
