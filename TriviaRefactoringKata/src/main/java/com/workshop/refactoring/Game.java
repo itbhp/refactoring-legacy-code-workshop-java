@@ -83,6 +83,10 @@ public class Game {
     }
 
     private void askQuestion() {
+        currentCategoryForPlaces();
+    }
+
+    private void currentCategoryForPlaces() {
         if (currentCategory() == "Pop")
             System.out.println(popQuestions.removeFirst());
         if (currentCategory() == "Science")
