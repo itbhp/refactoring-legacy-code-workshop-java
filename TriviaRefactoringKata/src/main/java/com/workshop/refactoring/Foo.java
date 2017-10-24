@@ -1,12 +1,26 @@
 package com.workshop.refactoring;
 
+import java.util.LinkedList;
+
 public class Foo {
-  void fillQuestion(Game game) {
+  private LinkedList popQuestions;
+  private LinkedList scienceQuestions;
+  private LinkedList sportsQuestions;
+  private LinkedList rockQuestions;
+
+  public Foo() {
+    popQuestions = new LinkedList();
+    scienceQuestions = new LinkedList();
+    sportsQuestions = new LinkedList();
+    rockQuestions = new LinkedList();
+  }
+
+  void fillQuestion() {
       for (int i = 0; i < 50; i++) {
-          game.popQuestions.addLast("Pop Question " + i);
-          game.scienceQuestions.addLast(("Science Question " + i));
-          game.sportsQuestions.addLast(("Sports Question " + i));
-          game.rockQuestions.addLast("Rock Question " + i);
+          popQuestions.addLast("Pop Question " + i);
+          scienceQuestions.addLast(("Science Question " + i));
+          sportsQuestions.addLast(("Sports Question " + i));
+          rockQuestions.addLast("Rock Question " + i);
       }
   }
 
@@ -23,14 +37,14 @@ public class Foo {
       return "Rock";
   }
 
-  void askQuestionForCategory(String category, Game game) {
+  void askQuestionForCategory(String category) {
       if (category == "Pop")
-          System.out.println(game.popQuestions.removeFirst());
+          System.out.println(popQuestions.removeFirst());
       if (category == "Science")
-          System.out.println(game.scienceQuestions.removeFirst());
+          System.out.println(scienceQuestions.removeFirst());
       if (category == "Sports")
-          System.out.println(game.sportsQuestions.removeFirst());
+          System.out.println(sportsQuestions.removeFirst());
       if (category == "Rock")
-          System.out.println(game.rockQuestions.removeFirst());
+          System.out.println(rockQuestions.removeFirst());
   }
 }

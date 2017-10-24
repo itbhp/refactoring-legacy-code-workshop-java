@@ -12,17 +12,12 @@ public class Game {
     int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
-    LinkedList popQuestions = new LinkedList();
-    LinkedList scienceQuestions = new LinkedList();
-    LinkedList sportsQuestions = new LinkedList();
-    LinkedList rockQuestions = new LinkedList();
-
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
         foo = new Foo();
-        foo.fillQuestion(this);
+        foo.fillQuestion();
     }
 
     public boolean isPlayable() {
@@ -83,7 +78,7 @@ public class Game {
     }
 
     private void askQuestion() {
-        foo.askQuestionForCategory(currentCategory(), this);
+        foo.askQuestionForCategory(currentCategory());
     }
 
 
