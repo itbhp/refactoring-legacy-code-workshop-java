@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 public class SpikeTests {
   @Test
   public void name() throws Exception {
-    Path path = Paths.get("game-output3.txt");
+    Path path = Paths.get("game-output.txt");
     System.setOut(new PrintStream(path.toFile()));
     GameRunner.main(new String[0]);
   }
