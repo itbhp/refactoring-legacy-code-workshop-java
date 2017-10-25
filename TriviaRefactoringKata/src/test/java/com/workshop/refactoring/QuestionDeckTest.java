@@ -22,7 +22,7 @@ public class QuestionDeckTest {
     "2, Sports", "6, Sports", "10, Sports",
     "3, Rock", "7, Rock", "11, Rock",
   })
-  public void placeForCategory(Integer expectedPlace, String expectedCategory) throws Exception {
+  public void categoryForPlace(Integer expectedPlace, String expectedCategory) throws Exception {
     final QuestionDeck deck = new QuestionDeck();
     assertThat(deck.categoryForPlace(expectedPlace), is(expectedCategory));
   }
@@ -43,45 +43,6 @@ public class QuestionDeckTest {
     final QuestionDeck deck = new QuestionDeck();
     deck.fillQuestions();
     assertThat(deck.askQuestionForCategory(category), is(category + " Question 0"));
-  }
-
-  @Test
-  @Parameters({"Pop", "Science", "Sports", "Rock"})
-  public void manyQuestionsForCategory(String category) throws Exception {
-    final QuestionDeck deck = new QuestionDeck();
-    deck.fillQuestions();
-    assertThat(deck.askQuestionForCategory(category), is(category + " Question 0"));
-    assertThat(deck.askQuestionForCategory(category), is(category + " Question 1"));
-    assertThat(deck.askQuestionForCategory(category), is(category + " Question 2"));
-  }
-
-  @Test
-  @Parameters({"Pop", "Science", "Sports", "Rock"})
-  public void endOfQuestions(String category) throws Exception {
-    final QuestionDeck deck = new QuestionDeck();
-    deck.fillQuestions();
-    for (int i = 0; i < 50; i++) {
-      assertThat(deck.askQuestionForCategory(category), is(category + " Question " + i));
-    }
-    try {
-      deck.askQuestionForCategory(category);
-      fail("expected exception");
-    } catch (Exception ex) {
-      assertThat(ex, instanceOf(NoSuchElementException.class));
-    }
-  }
-
-  @Test
-  @Parameters({"Pop", "Science", "Sports", "Rock"})
-  public void missingFill(String category) throws Exception {
-    final QuestionDeck deck = new QuestionDeck();
-
-    try {
-      deck.askQuestionForCategory(category);
-      fail("expected exception");
-    } catch (Exception ex) {
-      assertThat(ex, instanceOf(NoSuchElementException.class));
-    }
   }
 
   @Test
