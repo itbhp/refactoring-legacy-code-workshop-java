@@ -34,9 +34,10 @@ public class QuestionDeckTest {
   }
 
   @Test
-  public void firstQuestionForCategory() throws Exception {
+  @Parameters({"Pop", "Science", "Sports", "Rock"})
+  public void firstQuestionForCategory(String category) throws Exception {
     final QuestionDeck deck = new QuestionDeck();
     deck.fillQuestions();
-    assertThat(deck.askQuestionForCategory("Pop"), is("Pop Question 0"));
+    assertThat(deck.askQuestionForCategory(category), is(category + " Question 0"));
   }
 }
