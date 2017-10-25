@@ -23,7 +23,7 @@ public class QuestionDeckTest {
   })
   public void placeForCategory(Integer expectedPlace, String expectedCategory) throws Exception {
     final QuestionDeck deck = new QuestionDeck();
-    assertThat(deck.currentCategoryForPlaces(expectedPlace), is(expectedCategory));
+    assertThat(deck.categoryForPlace(expectedPlace), is(expectedCategory));
   }
 
   @Test
@@ -33,7 +33,7 @@ public class QuestionDeckTest {
   })
   public void outOfBoard(Integer expectedPlace) throws Exception {
     final QuestionDeck deck = new QuestionDeck();
-    assertThat(deck.currentCategoryForPlaces(expectedPlace), is("Rock"));
+    assertThat(deck.categoryForPlace(expectedPlace), is("Rock"));
   }
 
   @Test

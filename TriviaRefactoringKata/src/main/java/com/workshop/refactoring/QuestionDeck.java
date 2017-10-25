@@ -36,7 +36,7 @@ public class QuestionDeck {
     return category + " Question " + i;
   }
 
-  String currentCategoryForPlaces(int place) {
+  String categoryForPlace(int place) {
     if (popPlaces.contains(place)) return "Pop";
     if (sciencePlaces.contains(place)) return "Science";
     if (sportsPlaces.contains(place)) return "Sports";

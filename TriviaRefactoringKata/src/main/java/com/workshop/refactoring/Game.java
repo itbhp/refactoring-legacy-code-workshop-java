@@ -82,7 +82,8 @@ public class Game {
 
 
     private String currentCategory() {
-        return questionDeck.currentCategoryForPlaces(places[currentPlayer]);
+        int currentPlace = places[currentPlayer];
+        return questionDeck.categoryForPlace(currentPlace);
     }
 
     public boolean wasCorrectlyAnswered() {
