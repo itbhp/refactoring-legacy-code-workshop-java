@@ -2,7 +2,6 @@ package com.workshop.refactoring;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class QuestionDeck {
   private final Map<String, Category> categoriesByName;
@@ -14,15 +13,6 @@ public class QuestionDeck {
   public QuestionDeck(Map<String, List<Integer>> board) {
     categoriesByName = board.entrySet().stream()
       .collect(Collectors.toMap(i -> i.getKey(), i -> new Category(i.getValue())));
-  }
-
-  void fillQuestions() {
-    categoriesByName.forEach((key, value) ->
-      IntStream.rangeClosed(0, 50).forEach(i -> value.addQuestion(createIndexedQuestion(i, key))));
-  }
-
-  private String createIndexedQuestion(int i, final String category) {
-    return category + " Question " + i;
   }
 
   String categoryForPlace(int place) {
