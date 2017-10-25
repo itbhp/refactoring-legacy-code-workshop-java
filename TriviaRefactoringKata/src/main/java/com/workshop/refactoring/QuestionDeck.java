@@ -17,7 +17,7 @@ public class QuestionDeck {
   }
 
   void fillQuestions() {
-    categoriesByName.put("Pop", new Category(Arrays.asList(0, 4, 8)));
+    categoriesByName.put("History", new Category(Arrays.asList(0, 4, 8)));
     categoriesByName.put("Science", new Category(Arrays.asList(1, 5, 9)));
     categoriesByName.put("Sports", new Category(Arrays.asList(2, 6, 10)));
     categoriesByName.put("Rock", new Category(Arrays.asList(3, 7, 11)));
