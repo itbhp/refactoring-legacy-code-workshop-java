@@ -1,14 +1,15 @@
 package com.workshop.refactoring;
 
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Category {
   private final Deque<String> questions;
   private final List<Integer> places;
 
-  public Category(Deque<String> questions, List<Integer> places) {
-    this.questions = questions;
+  public Category(List<Integer> places) {
+    this.questions = new LinkedList<>();
     this.places = places;
   }
 

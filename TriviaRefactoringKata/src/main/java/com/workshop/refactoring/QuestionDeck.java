@@ -9,10 +9,10 @@ public class QuestionDeck {
   private final Category rock;
 
   public QuestionDeck() {
-    pop = new Category(new LinkedList<>(), Arrays.asList(0, 4, 8));
-    science = new Category(new LinkedList<>(), Arrays.asList(1, 5, 9));
-    sports = new Category(new LinkedList<>(), Arrays.asList(2, 6, 10));
-    rock = new Category(new LinkedList<>(), Arrays.asList(3, 7, 11));
+    pop = new Category(Arrays.asList(0, 4, 8));
+    science = new Category(Arrays.asList(1, 5, 9));
+    sports = new Category(Arrays.asList(2, 6, 10));
+    rock = new Category(Arrays.asList(3, 7, 11));
   }
 
   void fillQuestions() {
