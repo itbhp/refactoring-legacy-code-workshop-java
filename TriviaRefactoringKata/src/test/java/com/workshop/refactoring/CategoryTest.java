@@ -2,6 +2,7 @@ package com.workshop.refactoring;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.NoSuchElementException;
 
@@ -46,5 +47,18 @@ public class CategoryTest {
     }catch (Exception ex) {
       assertThat(ex, instanceOf(NoSuchElementException.class));
     }
+  }
+
+  @Test
+  public void checkMinePosition() throws Exception {
+    Category category = new Category(Arrays.asList(1, 100));
+    assertTrue(category.isPlacedOn(1));
+    assertTrue(category.isPlacedOn(100));
+  }
+
+  @Test
+  public void checkNotMinePosition() throws Exception {
+    Category category = new Category(Arrays.asList(1, 100));
+    assertFalse(category.isPlacedOn(11));
   }
 }
