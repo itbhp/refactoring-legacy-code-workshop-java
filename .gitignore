@@ -4,6 +4,7 @@
 ./TriviaRefactoringKata/target/
 ./TriviaRefactoringKata/*.iml
 ./TriviaRefactoringKata/.idea/
+./TriviaRefactoringKata/game-output.txt
 ./FizzBuzzRefactoringKata/target/
 ./FizzBuzzRefactoringKata/*.iml
 ./FizzBuzzRefactoringKata/.idea/
