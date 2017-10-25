@@ -9,6 +9,7 @@ import java.util.NoSuchElementException;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.*;
 
 @RunWith(JUnitParamsRunner.class)
@@ -83,4 +84,10 @@ public class QuestionDeckTest {
     }
   }
 
+  @Test
+  public void unknownCategory() throws Exception {
+    final QuestionDeck deck = new QuestionDeck();
+    deck.fillQuestions();
+    assertThat(deck.askQuestionForCategory("unknown"), is(nullValue()));
+  }
 }
