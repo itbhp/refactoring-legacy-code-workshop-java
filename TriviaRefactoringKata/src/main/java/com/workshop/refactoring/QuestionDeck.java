@@ -1,15 +1,12 @@
 package com.workshop.refactoring;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class QuestionDeck {
-  private LinkedList popQuestions;
-  private LinkedList scienceQuestions;
-  private LinkedList sportsQuestions;
-  private LinkedList rockQuestions;
+  private Deque popQuestions;
+  private Deque scienceQuestions;
+  private Deque sportsQuestions;
+  private Deque rockQuestions;
   private final List<Integer> popPlaces;
   private final List<Integer> sciencePlaces;
   private final List<Integer> sportsPlaces;
