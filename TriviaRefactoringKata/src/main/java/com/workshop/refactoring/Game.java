@@ -14,21 +14,13 @@ public class Game {
   int currentPlayer = 0;
   boolean isGettingOutOfPenaltyBox;
 
-  public Game() {
-    Map<String, List<Integer>> categoriesPlaces = new HashMap<String, List<Integer>>() {{
-      put("History", Arrays.asList(0, 4, 8));
-      put("Science", Arrays.asList(1, 5, 9));
-      put("Sports", Arrays.asList(2, 6, 10));
-      put("Rock", Arrays.asList(3, 7, 11));
-    }};
+  public Game(Map<String, List<Integer>> categoriesPlaces) {
     questionDeck = new QuestionDeck(categoriesPlaces);
     for (Map.Entry<String, List<Integer>> item : categoriesPlaces.entrySet()) {
       for (int i = 0; i < 50; i++) {
         questionDeck.addQuestion(item.getKey(), createIndexedQuestion(i, item.getKey()));
       }
-
     }
-//    questionDeck.fillQuestions();
   }
 
   private String createIndexedQuestion(int i, final String category) {
