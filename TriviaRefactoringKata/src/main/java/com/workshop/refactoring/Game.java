@@ -1,6 +1,6 @@
 package com.workshop.refactoring;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Game {
 
@@ -15,7 +15,13 @@ public class Game {
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
-        questionDeck = new QuestionDeck();
+        Map<String, List<Integer>> categoriesPlaces = new HashMap<String, List<Integer>>() {{
+            put("History", Arrays.asList(0, 4, 8));
+            put("Science", Arrays.asList(1, 5, 9));
+            put("Sports", Arrays.asList(2, 6, 10));
+            put("Rock", Arrays.asList(3, 7, 11));
+        }};
+        questionDeck = new QuestionDeck(categoriesPlaces);
         questionDeck.fillQuestions();
     }
 
