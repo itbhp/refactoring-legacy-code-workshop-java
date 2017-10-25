@@ -37,14 +37,24 @@ public class QuestionDeck {
       return "Rock";
   }
 
-  void askQuestionForCategory(String category) {
-      if (category == "Pop")
-          System.out.println(popQuestions.removeFirst());
-      if (category == "Science")
-          System.out.println(scienceQuestions.removeFirst());
-      if (category == "Sports")
-          System.out.println(sportsQuestions.removeFirst());
-      if (category == "Rock")
-          System.out.println(rockQuestions.removeFirst());
+  Object askQuestionForCategory(String category) {
+      Object question = null;
+      if (category == "Pop") {
+        question = popQuestions.removeFirst();
+        System.out.println(question);
+      }
+      else if (category == "Science") {
+        question = scienceQuestions.removeFirst();
+        System.out.println(question);
+      }
+      else if (category == "Sports") {
+        question = sportsQuestions.removeFirst();
+        System.out.println(question);
+      }
+      else if (category == "Rock") {
+        question = rockQuestions.removeFirst();
+        System.out.println(question);
+      }
+      return question;
   }
 }

@@ -33,4 +33,10 @@ public class QuestionDeckTest {
     assertThat(deck.currentCategoryForPlaces(expectedPlace), is("Rock"));
   }
 
+  @Test
+  public void firstQuestionForCategory() throws Exception {
+    final QuestionDeck deck = new QuestionDeck();
+    deck.fillQuestions();
+    assertThat(deck.askQuestionForCategory("Pop"), is("Pop Question 0"));
+  }
 }
