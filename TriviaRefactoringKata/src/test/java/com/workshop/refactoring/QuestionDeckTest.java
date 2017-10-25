@@ -40,4 +40,14 @@ public class QuestionDeckTest {
     deck.fillQuestions();
     assertThat(deck.askQuestionForCategory(category), is(category + " Question 0"));
   }
+
+  @Test
+  @Parameters({"Pop", "Science", "Sports", "Rock"})
+  public void manyQuestionsForCategory(String category) throws Exception {
+    final QuestionDeck deck = new QuestionDeck();
+    deck.fillQuestions();
+    assertThat(deck.askQuestionForCategory(category), is(category + " Question 0"));
+    assertThat(deck.askQuestionForCategory(category), is(category + " Question 1"));
+    assertThat(deck.askQuestionForCategory(category), is(category + " Question 2"));
+  }
 }
