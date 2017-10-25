@@ -22,4 +22,15 @@ public class QuestionDeckTest {
     final QuestionDeck deck = new QuestionDeck();
     assertThat(deck.currentCategoryForPlaces(expectedPlace), is(expectedCategory));
   }
+
+  @Test
+  @Parameters({
+    "12", "123", "" + Integer.MAX_VALUE,
+    "-1", "-57", "" + Integer.MIN_VALUE
+  })
+  public void outOfBoard(Integer expectedPlace) throws Exception {
+    final QuestionDeck deck = new QuestionDeck();
+    assertThat(deck.currentCategoryForPlaces(expectedPlace), is("Rock"));
+  }
+
 }
